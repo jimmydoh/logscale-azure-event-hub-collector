@@ -306,6 +306,7 @@ class Eventhub:
                             event.sequence_number,
                             self.partition_ids,
                         )
+                        checkpoint_obj_update.update_checkpoint_file(self.checkpoint)
                 else:
                     logging.info(
                         "Not ingesting events for partition id %d, failure occurred.",
